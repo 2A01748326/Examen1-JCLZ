@@ -2,7 +2,7 @@
 //const { response } = require('express');
 const express = require('express');
 const path = require('path');
-const consolaRoutes = require('./routes/consola');
+const consolaRoutes = require('./routes/examen');
 
 const app = express(); //Crear la aplicacion de express y la guardamos en app
 
@@ -11,7 +11,7 @@ const app = express(); //Crear la aplicacion de express y la guardamos en app
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/consola',consolaRoutes);
+app.use('/examen',consolaRoutes);
 
 //Definicion de neustra aplicacion
 //En los argumentos se especifica la entrada y la salida (argumentos y valores a regresar)
@@ -49,6 +49,6 @@ app.post('/prueba3', (req, res) =>{//mandados por postman
     res.send("Datos recibidos");
 });
 //Lanzar la aplicacion
-app.listen(8080, ()=>{
+app.listen(8083, ()=>{
     console.log('Servidor en linea');
 });//Los parametros son el puerto donde funcionara y el callback (arrowFnct)
